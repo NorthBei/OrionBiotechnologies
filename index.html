@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <link rel="apple-touch-icon" sizes="57x57" href="./icon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="./icon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="./icon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="./icon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/icon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/icon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="./icon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="./icon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./icon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="./icon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./icon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="./icon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./icon/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#408a95">
+    <meta name="msapplication-TileImage" content="./icon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#408a95">
+
+    <title>Orion</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        var $body;
+
+        $(function(){
+
+            $body =  $("html, body");
+
+            $('#nav>.nav_label').click(function(){
+                
+                var id = $(this).data("rel");
+                if( id==undefined || id==null){
+                    return;
+                }
+                var position = $("#"+id).offset().top;
+                console.log(id,position);
+
+                $body.animate({
+                    scrollTop: (position-70)
+                }, 800);
+        
+                return false;
+            });
+        });
+    </script>
+    <style>
+        /*predefine*/
+        html,body{
+            margin: 0;
+            padding: 0;
+            font-family: corbelb;
+        }
+
+        a{
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .all_gray{
+            -webkit-filter: grayscale(100%); 
+            -moz-filter: grayscale(100%); 
+            -ms-filter: grayscale(100%); 
+            -o-filter: grayscale(100%); 
+            filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);  
+            _filter:none; 
+        }
+
+        .flex_h{
+            display: flex;
+            flex-direction: row;
+        }
+
+        .flex_h_vCenter{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+
+        .flex_vCenter{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        @font-face {
+            font-family: corbelb;
+            src: url(./fonts/corbelb.ttf);
+        }
+
+        /*predefine*/
+        #header{
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 30;
+            width: 100%;
+            height: 74px;
+            background: white;
+            box-shadow: 0 2px 2px rgba(0,0,0,0.2);
+
+            justify-content: space-between;
+            padding: 0 2rem;
+            box-sizing: border-box;
+        }
+
+        #logo_img{
+            height: 55px;
+        }
+        #nav{
+            color: #408a95;
+            height: 100%;
+        }
+
+        #nav div{
+            padding: 0 1.2rem;
+            height: 100%;
+            transition: color 0.6s,background 0.6s;
+            font-size: 20px;
+        }
+
+        #nav  div:hover{
+            background: #408a95;
+            color: white;
+            cursor: pointer;
+        }
+
+        #main_sec{
+            background-image: url("./assets/home_main_size-min2.jpg");
+            background-size: cover;
+            background-position: center;
+            height: 75vh;
+            display: table;
+
+            padding: 6.5rem;
+            box-sizing: border-box;
+
+            min-height: 560px;
+        }
+
+        #main_sec h1{
+            vertical-align: bottom;
+            display: table-cell;
+            text-align: right;
+            color: white;
+            font-size: 2.6rem;
+        }
+
+        .sec{
+            width: 100%;
+            /*min-height: 90vh;*/
+        }
+
+        .sec>article{
+            max-width: 1150px;
+            height: 100%;
+            width: 100%;
+            margin: 0 auto;
+            padding: 5rem 3rem;
+            box-sizing: border-box;
+        }
+
+        .sec p{
+            line-height: 1.5;
+            font-size: 1.35rem;
+            font-weight: 300;
+            margin: 4rem 0;
+        }
+
+        .sec:nth-child(odd) {
+            background: white;
+        }
+
+        .sec .title{
+            margin-top: 0;
+            font-size: 2.6rem;
+        }
+
+        .sec .title.center{
+            text-align: center;
+        }
+
+        .sec:nth-child(odd) .title{
+            color: #408a95;
+        }
+
+        .sec:nth-child(odd) p{
+            color: #4a4a4a;
+        }
+
+        .sec:nth-child(even) {
+            background: #408a95;
+        }
+
+        .sec:nth-child(even) .title{
+            color: white;
+        }
+
+        .sec:nth-child(even) p{
+            color: white;
+        }
+
+        #Technology{
+            /* background: #e6e6e6; */
+            background-color: #f3f6f8;
+        }
+
+        #Technology .pricing_table{
+            background: #fff;
+            border: 1px solid #d9e3ea;
+            width: 28%;
+            max-width: 364px;
+            min-height: 450px;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #Technology .pricing_table_wrapper{
+            justify-content: space-between;
+        }
+        
+        #Technology .pricing_title{
+            background: #33ac99;
+            color: white;
+            width: 100%;
+            margin: 0;
+            height: 90px;
+            font-size: 20px;
+            text-align: center;
+            line-height: 90px;
+            background: linear-gradient(#408a95,#33ac99);
+        }
+
+        #Technology .pricing_content{
+            color: #4d4d4d;
+            height: 100%;
+        }
+
+        #Technology .pricing_content p{
+            padding: 20px 30px;
+            margin: 0;
+            font-size: 1rem;
+        }
+
+        #Technology .pricing_btn_wrapper{
+            width: 100%;
+            text-align: center;
+            border-top: 1px solid #eee;
+            padding: 30px 0;
+            box-sizing: border-box;
+        }
+
+        #Technology .pricing_btn{
+            background: #eee;
+            color: #b7b7b7;
+            border-radius: 5px;
+            text-align: center;
+            padding: 10px 25px;
+            font-size: 1.2rem;
+        }
+
+        #Technology .pricing_btn.active{
+            background: #33ac99;
+            color: white;
+            transition: background 0.3s ease-in-out;
+        }
+
+        #Technology .pricing_btn.active:hover{
+            background: #408a95;
+        }
+
+        #Collaborations{
+            min-height: initial;
+            background: #e6e6e6;
+            padding: 45px 0px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #Collaborations .title{
+            color: #848080;
+        }
+
+        #img_list>img{
+            height: 90px;
+        }
+
+        #Contact{
+            min-height: initial;
+            box-sizing: border-box;
+        }
+
+        #Contact .info{
+            margin-left: 80px;
+            color: #408a95;
+            font-size: 18px;
+        }
+
+        #Contact .info a ,
+        #Contact .info>address{
+            color: inherit;
+            font-style: normal;
+        }
+        
+        #Contact .info p{
+            margin: 0.6rem 0;
+        }
+
+        #footer{
+            background: #408a95;
+            height: 70px;
+            text-align: center;
+            color: white;
+            font-size: 1.2rem;
+            line-height: 70px;
+        }
+    </style>
+</head>
+<body>
+    <header id="header" class="flex_h_vCenter">
+        <img src="./assets/logo_size-min2.png" alt="logo" id="logo_img">
+        <nav id="nav" class="flex_h_vCenter">
+            <div class="flex_h_vCenter nav_label" data-rel="Technology">Technology</div>
+            <div class="flex_h_vCenter nav_label" data-rel="Collaborations">Collaborations</div>
+            <div class="flex_h_vCenter"><a href="">Join us</a></div>
+            <div class="flex_h_vCenter nav_label" data-rel="Contact">Contact</div>
+        </nav>
+    </header>
+    <section class="sec" id="main_sec">
+        <h1>Site-Specific Antibody Conjugation <br>for ADCs and Cellular Immunotherapy</h1>
+    </section>
+    <section class="sec">
+        <article>
+            <h1 class="title">For Antibody Drug Conjugations (ADCs)</h1>
+            <p>Orion’s new generation site-specific ADC technology produce stable ADCs by linking the payloads to single pre-modified site of an IgG. All IgGs can be constructed to ADCs within 3 days without the need of antibody genetic engineering. The obtained ADCs can be used readily for functional evaluation including specificity, binding affinity, internalization, in vitro cell cytotoxicity and in vivo assays. The ideal model of ADCs construction boosts more stable new generation ADCs.</p>
+            
+            <img src="./assets/1_Site-Specific Modification_and_Conjugation.svg" alt="">
+
+            <p>Our conjugation technology enables various functional ADCs developed for clinical and commercial use. Any kind of payloads, linkers, and antibodies correspond to your purposes. </p>
+
+            <img src="./assets/2_Functional_Conjugates.svg" alt="">
+        </article>
+    </section>
+    <section class="sec">
+        <article>
+            <h1 class="title">For Cellular Immunotherapies</h1>
+            <p>To treat both liquid and solid tumors with potential “living drugs”, one of Orion’s strategies focus on antibody-redirected immune cell therapy. Antibody-redirected T cell comprised of cytotoxic T-cells and bridged antibodies. One end of the bridged molecules target the tumor cells, the other end engage the T-cells and trigger downstream cell killing pathways. T-cells can be readily used without genetic engineering, which makes all existing antibodies transformed into cell immunotherapies seamlessly.</p>
+            
+            <img src="./assets/3_Antibody-redirected_T-cell.svg" alt="">
+            <p>We utilizes facile and innovative method to conjugate antibodies to universal T-cells. It provides better quality control via uniform cell manufacturing. This technology could also applied on alternative effector cells such as macrophages and NK cells for different targeted disease. Off-the-shelf cell immunotherapy can tackle the drug pricing challenge, make cell immunotherapy be truly affordable and accessible in the future. </p>
+            <img src="./assets/4_Targeted_Universal_Immune_Cells.svg" alt="">
+
+        </article>
+    </section>
+    <section class="sec" id="Technology">
+        <article>
+            <h1 class="title center">Technology License</h1>
+            <div class="pricing_table_wrapper flex_h">
+                <div class="pricing_table">
+                    <h3 class="pricing_title">Site-specific ADC construction</h3>
+                    <div class="pricing_content">
+                        <p>Fast Site-Specific Modification and Conjugation platform of IgGs for ADC construction.</p>
+                        <p>Free sample trial available (Reagents for 2mg IgG site-specific conjugation with well designed linker-payload)</p>
+                    </div>
+                    <div class="pricing_btn_wrapper">
+                        <a class="pricing_btn active" href="https://goo.gl/forms/hpJphgfllmzbiRAE3">Inquiry</a>
+                    </div>
+                </div>
+                <div class="pricing_table">
+                    <h3 class="pricing_title">Antibody-redirected T-cell</h3>
+                    <div class="pricing_content">
+                        <p>Cancer specific antibody fused with T cell activation domain related antibodies through mild modification to guide T-cell and cancer cell together Free sample trial available (bridged antibodies)</p>
+                    </div>
+                    <div class="pricing_btn_wrapper">
+                            <a class="pricing_btn active" href="https://goo.gl/forms/4uKNzaJMXpk8ZJ2N2">Inquiry</a>
+                        </div>
+                </div>
+                <div class="pricing_table">
+                    <h3 class="pricing_title">Targeted universal T-cell</h3>
+                    <div class="pricing_content">
+                        <p>T-cell containing an uniform activation domain, to which modified IgGs could be specifically conjugated</p>
+                    </div>
+                    <div class="pricing_btn_wrapper">
+                            <a class="pricing_btn active" href="https://goo.gl/forms/a95dgw0tVgI0Fd4g1">Inquiry</a>
+                        </div>
+                </div>
+            </div>
+        </article>
+    </section>
+    <section class="sec" id="Collaborations">
+        <h2 class="title center">Collaborations</h2>
+        <div id="img_list">
+            <img class="all_gray" src="./assets/Collaborations_NTU-size-min2.png" alt="國立台灣大學">
+        </div>
+    </section>
+    <section class="sec" id="Contact">
+        <article >
+            <h2 class="title center">Contact</h2>
+            <div class="flex_h_vCenter">
+                <map name="Orion Biotechnologies, Inc">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3614.701279776509!2d121.52825597994723!3d25.04420968404609!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a97b4463f74d%3A0x25b7acc1ceda8b33!2zMTAw5Y-w5YyX5biC5Lit5q2j5Y2A6YeR5bGx5YyX6LevMeiZnw!5e0!3m2!1szh-TW!2stw!4v1484710854372" width="500" height="350" frameborder="0" style="border:0" allowfullscreen></iframe>
+                </map>
+                <div class="info flex_vCenter">
+                    <p>Orion Biotechnologies, Inc. 獵戶座生物科技股份有限公司</p>
+                    <address>
+                        <p>100台北市中正區金山北路1號</p> 
+                        <p>No.1, Jinshan N. Rd., Zhongzheng Dist., Taipei City 100, Taiwan (R.O.C.)</p>
+                    </address>
+                    <p>Email : <a href="mailto:support@orionbiotechnologies.com?Subject=Custom herer" target="_top">support@orionbiotechnologies.com</a></p>
+                    <p>Tel : <a href="tel:+886 2 25950625">+886 2 25950625</a></p>
+                    
+                </div>
+            </div>
+        </article>    
+    </section>
+    <footer id="footer">
+        <div >© 2018 Orion Biotechnologies, Inc. All Rights Reserved</div>
+    </footer>
+</body>
+</html>
