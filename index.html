@@ -149,6 +149,13 @@
             text-align: right;
             color: white;
             font-size: 2.6rem;
+            font-size: 3vw;
+        }
+
+        @media screen and (min-width: 1440) {
+            #main_sec h1 {
+                font-size: 2.6rem;
+            }
         }
 
         .sec{
@@ -156,8 +163,8 @@
             /*min-height: 90vh;*/
         }
 
-        .sec>article{
-            max-width: 1150px;
+        .sec>.content{
+            max-width: 1000px;
             height: 100%;
             width: 100%;
             margin: 0 auto;
@@ -167,9 +174,9 @@
 
         .sec p{
             line-height: 1.5;
-            font-size: 1.35rem;
+            font-size: 1.1rem;
             font-weight: 300;
-            margin: 4rem 0;
+            margin: 8px 0 4rem;
         }
 
         .sec:nth-child(odd) {
@@ -178,7 +185,7 @@
 
         .sec .title{
             margin-top: 0;
-            font-size: 2.6rem;
+            font-size: 1.8rem;
         }
 
         .sec .title.center{
@@ -222,8 +229,8 @@
             align-items: center;
         }
 
-        #Technology .pricing_table_wrapper{
-            justify-content: space-between;
+        #Technology .pricing_table:nth-of-type(2){
+            margin: 0 40px;
         }
         
         #Technology .pricing_title{
@@ -241,12 +248,22 @@
         #Technology .pricing_content{
             color: #4d4d4d;
             height: 100%;
+            padding: 20px 30px;
         }
 
         #Technology .pricing_content p{
-            padding: 20px 30px;
             margin: 0;
             font-size: 1rem;
+            margin-bottom: 20px;
+            /*for pseudo element*/
+            position: relative;
+        }
+
+        #Technology .pricing_content p:after {
+            position: absolute;
+            content: '-';
+            top: 0;
+            left: -15px;
         }
 
         #Technology .pricing_btn_wrapper{
@@ -293,36 +310,54 @@
 
         #img_list>img{
             height: 90px;
-        }
-
-        #Contact{
-            min-height: initial;
-            box-sizing: border-box;
-        }
-
-        #Contact .info{
-            margin-left: 80px;
-            color: #408a95;
-            font-size: 18px;
-        }
-
-        #Contact .info a ,
-        #Contact .info>address{
-            color: inherit;
-            font-style: normal;
-        }
-        
-        #Contact .info p{
-            margin: 0.6rem 0;
+            margin: 0 15px;
         }
 
         #footer{
-            background: #408a95;
-            height: 70px;
-            text-align: center;
             color: white;
-            font-size: 1.2rem;
-            line-height: 70px;
+            font-family: sans-serif,monospace;
+        }
+
+        #footer p{
+            margin: 0;
+            font-size: 14px;
+            line-height: 17px;
+            margin-bottom: 10px;
+            color: #4a4a4a;
+        }
+
+        #footer_logo{
+            height: 100px;
+        }
+
+        #footer .info_wrapper{
+            display: flex;
+            justify-content: space-between;
+        }
+
+        #footer .info_wrapper>div{
+            flex: 1;
+        }
+
+        #footer .info_wrapper>div:nth-of-type(2){
+            margin: 0 30px;
+        }
+
+        #footer h5.main_symbol {
+            font-size: 20px;
+            border-bottom: 1px solid;
+            width: 50%;
+            color: #408a95;
+        }
+
+        #footer .main_symbol{
+            margin-bottom: 15px;
+        }
+
+        #footer .copyright{
+            border-top: 1px solid #c3c3c3;
+            padding-top: 15px;
+            margin-top: 25px;
         }
     </style>
 </head>
@@ -333,37 +368,35 @@
             <div class="flex_h_vCenter nav_label" data-rel="Technology">Technology</div>
             <div class="flex_h_vCenter nav_label" data-rel="Collaborations">Collaborations</div>
             <div class="flex_h_vCenter"><a href="">Join us</a></div>
-            <div class="flex_h_vCenter nav_label" data-rel="Contact">Contact</div>
+            <div class="flex_h_vCenter nav_label" data-rel="footer">Contact</div>
         </nav>
     </header>
     <section class="sec" id="main_sec">
         <h1>Site-Specific Antibody Conjugation <br>for ADCs and Cellular Immunotherapy</h1>
     </section>
     <section class="sec">
-        <article>
+        <article class="content">
             <h1 class="title">For Antibody Drug Conjugations (ADCs)</h1>
-            <p>Orion’s new generation site-specific ADC technology produce stable ADCs by linking the payloads to single pre-modified site of an IgG. All IgGs can be constructed to ADCs within 3 days without the need of antibody genetic engineering. The obtained ADCs can be used readily for functional evaluation including specificity, binding affinity, internalization, in vitro cell cytotoxicity and in vivo assays. The ideal model of ADCs construction boosts more stable new generation ADCs.</p>
-            
             <img src="./assets/1_Site-Specific Modification_and_Conjugation.svg" alt="">
-
-            <p>Our conjugation technology enables various functional ADCs developed for clinical and commercial use. Any kind of payloads, linkers, and antibodies correspond to your purposes. </p>
-
+            <p>Orion’s new generation site-specific ADC technology produce stable ADCs by linking the payloads to single pre-modified site of an IgG. All IgGs can be constructed to ADCs within 3 days without the need of antibody genetic engineering. The obtained ADCs can be used readily for functional evaluation including specificity, binding affinity, internalization, in vitro cell cytotoxicity and in vivo assays. The ideal model of ADCs construction boosts more stable new generation ADCs.</p>
             <img src="./assets/2_Functional_Conjugates.svg" alt="">
+            <p>Our conjugation technology enables various functional ADCs developed for clinical and commercial use. Any kind of payloads, linkers, and antibodies correspond to your purposes. </p>
         </article>
     </section>
     <section class="sec">
-        <article>
+        <article class="content">
             <h1 class="title">For Cellular Immunotherapies</h1>
-            <p>To treat both liquid and solid tumors with potential “living drugs”, one of Orion’s strategies focus on antibody-redirected immune cell therapy. Antibody-redirected T cell comprised of cytotoxic T-cells and bridged antibodies. One end of the bridged molecules target the tumor cells, the other end engage the T-cells and trigger downstream cell killing pathways. T-cells can be readily used without genetic engineering, which makes all existing antibodies transformed into cell immunotherapies seamlessly.</p>
             
             <img src="./assets/3_Antibody-redirected_T-cell.svg" alt="">
-            <p>We utilizes facile and innovative method to conjugate antibodies to universal T-cells. It provides better quality control via uniform cell manufacturing. This technology could also applied on alternative effector cells such as macrophages and NK cells for different targeted disease. Off-the-shelf cell immunotherapy can tackle the drug pricing challenge, make cell immunotherapy be truly affordable and accessible in the future. </p>
+            <p>To treat both liquid and solid tumors with potential “living drugs”, one of Orion’s strategies focus on antibody-redirected immune cell therapy. Antibody-redirected T cell comprised of cytotoxic T-cells and bridged antibodies. One end of the bridged molecules target the tumor cells, the other end engage the T-cells and trigger downstream cell killing pathways. T-cells can be readily used without genetic engineering, which makes all existing antibodies transformed into cell immunotherapies seamlessly.</p>
+
             <img src="./assets/4_Targeted_Universal_Immune_Cells.svg" alt="">
+            <p>We utilizes facile and innovative method to conjugate antibodies to universal T-cells. It provides better quality control via uniform cell manufacturing. This technology could also applied on alternative effector cells such as macrophages and NK cells for different targeted disease. Off-the-shelf cell immunotherapy can tackle the drug pricing challenge, make cell immunotherapy be truly affordable and accessible in the future. </p>
 
         </article>
     </section>
     <section class="sec" id="Technology">
-        <article>
+        <div class="content">
             <h1 class="title center">Technology License</h1>
             <div class="pricing_table_wrapper flex_h">
                 <div class="pricing_table">
@@ -379,7 +412,8 @@
                 <div class="pricing_table">
                     <h3 class="pricing_title">Antibody-redirected T-cell</h3>
                     <div class="pricing_content">
-                        <p>Cancer specific antibody fused with T cell activation domain related antibodies through mild modification to guide T-cell and cancer cell together Free sample trial available (bridged antibodies)</p>
+                        <p>Cancer specific antibody fused with T cell activation domain related antibodies through mild modification to guide T-cell and cancer cell together.</p>
+                        <p>Free sample trial available (bridged antibodies)</p>
                     </div>
                     <div class="pricing_btn_wrapper">
                             <a class="pricing_btn active" href="https://goo.gl/forms/4uKNzaJMXpk8ZJ2N2">Inquiry</a>
@@ -395,36 +429,37 @@
                         </div>
                 </div>
             </div>
-        </article>
+        </div>
     </section>
     <section class="sec" id="Collaborations">
         <h2 class="title center">Collaborations</h2>
         <div id="img_list">
             <img class="all_gray" src="./assets/Collaborations_NTU-size-min2.png" alt="國立台灣大學">
+            <img class="all_gray" src="./assets/Collaborations_NTU_IIC_size-min2.png" alt="國立台灣大學創新育成中心">
+            
         </div>
     </section>
-    <section class="sec" id="Contact">
-        <article >
-            <h2 class="title center">Contact</h2>
-            <div class="flex_h_vCenter">
-                <map name="Orion Biotechnologies, Inc">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3614.701279776509!2d121.52825597994723!3d25.04420968404609!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a97b4463f74d%3A0x25b7acc1ceda8b33!2zMTAw5Y-w5YyX5biC5Lit5q2j5Y2A6YeR5bGx5YyX6LevMeiZnw!5e0!3m2!1szh-TW!2stw!4v1484710854372" width="500" height="350" frameborder="0" style="border:0" allowfullscreen></iframe>
-                </map>
-                <div class="info flex_vCenter">
-                    <p>Orion Biotechnologies, Inc. 獵戶座生物科技股份有限公司</p>
-                    <address>
-                        <p>100台北市中正區金山北路1號</p> 
-                        <p>No.1, Jinshan N. Rd., Zhongzheng Dist., Taipei City 100, Taiwan (R.O.C.)</p>
-                    </address>
-                    <p>Email : <a href="mailto:support@orionbiotechnologies.com?Subject=Custom herer" target="_top">support@orionbiotechnologies.com</a></p>
+    <footer id="footer" class="sec">
+        <section class="content">
+            <div class="info_wrapper">
+                <div>
+                    <img src="./assets/logo_size-min2.png" alt="" id="footer_logo" class="main_symbol">
+                    <p>獵戶座生物科技股份有限公司</p>
+                    <p>Orion Biotechnologies, Inc.</p>
+                </div>
+                <div>
+                    <h5 class="main_symbol">Contact Us</h5>
                     <p>Tel : <a href="tel:+886 2 25950625">+886 2 25950625</a></p>
-                    
+                    <p>Email : <a href="mailto:support@orionbiotechnologies.com?Subject=Custom herer" target="_top">support@orionbiotechnologies.com</a></p>
+                </div>
+                <div>
+                    <h5 class="main_symbol">Address</h5>
+                    <p>100台北市中正區金山北路1號</p>
+                    <p>No.1, Jinshan N. Rd., Zhongzheng Dist., Taipei City 100, Taiwan (R.O.C.)</p>
                 </div>
             </div>
-        </article>    
-    </section>
-    <footer id="footer">
-        <div >© 2018 Orion Biotechnologies, Inc. All Rights Reserved</div>
+            <p class="copyright">© 2018 Orion Biotechnologies, Inc.</p>
+        </section>
     </footer>
 </body>
 </html>
