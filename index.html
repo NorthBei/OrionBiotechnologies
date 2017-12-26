@@ -179,7 +179,7 @@
             font-size: 14px;
         }
 
-        #nav  div:hover{
+        #nav  .nav_label:hover{
             background: #408a95;
             color: white;
             cursor: pointer;
@@ -211,23 +211,23 @@
                 visibility: hidden;
             }
 
-            #nav .nav_label:nth-of-type(1){
+            #nav .nav_label:nth-child(1){
                 border-top: 1px solid #eee;
                 transform: translateY(10px);
             }
-            #nav .nav_label:nth-of-type(2){
+            #nav .nav_label:nth-child(2){
                 transform: translateY(20px);
             }
-            #nav .nav_label:nth-of-type(3){
+            #nav .nav_label:nth-child(3){
                 transform: translateY(30px);
             }
-            #nav .nav_label:nth-of-type(4){
+            #nav .nav_label:nth-child(4){
                 transform: translateY(40px);
             }
-            #nav .nav_label:nth-of-type(5){
+            #nav .nav_label:nth-child(5){
                 transform: translateY(50px);
             }
-            #nav .nav_label:nth-of-type(6){
+            #nav .nav_label:nth-child(6){
                 transform: translateY(60px);
             }
 
@@ -568,14 +568,19 @@
             color: #848080;
         }
 
+        #img_list{
+            display: flex;
+            align-items: center;
+        }
+
         #img_list>img{
             height: 90px;
             margin: 0 15px;
         }
 
-        /* #img_list>#NTU_IIC{
+        #img_list>#NTU_IIC{
             height: 130px;
-        } */
+        }
 
         @media screen and (max-width: 550px) {
             #img_list{
@@ -583,7 +588,6 @@
                 box-sizing: border-box;
                 display: flex;
                 flex-direction: column;
-                align-items: center;
             }
 
             #img_list>img{
@@ -661,7 +665,7 @@
             <div class="flex_h_vCenter nav_label" data-rel="Technology1">Technologies</div>
             <div class="flex_h_vCenter nav_label" data-rel="License">License</div>
             <div class="flex_h_vCenter nav_label" data-rel="Collaborations">Collaborations</div>
-            <div class="flex_h_vCenter nav_label"><a href="https://angel.co/orion-biotechnologies/jobs/312481-senior-biotechnology-engineer">Join us</a></div>
+            <a class="flex_h_vCenter nav_label" href="https://angel.co/orion-biotechnologies/jobs/312481-senior-biotechnology-engineer">Join us</a>
             <div class="flex_h_vCenter nav_label" data-rel="footer">Contact</div>
         </nav>
         <div class="animated-icon menu-cross-s visiable_after_rwd">
@@ -674,9 +678,9 @@
     <section class="sec tech_intro" id="Technology1">
         <article class="content">
             <h1 class="title">For Antibody Drug Conjugations (ADCs)</h1>
-            <img class="pictrue" src="./assets/1_Site-Specific Modification_and_Conjugation.jpg" alt="">
+            <img class="pictrue" src="./assets/1_Site-Specific Modification_and_Conjugation_Apercu_Pro.jpg" alt="">
             <p>Orion’s new generation site-specific ADC technology produce stable ADCs by linking the payloads to single pre-modified site of an IgG. All IgGs can be constructed to ADCs within 3 days without the need of antibody genetic engineering. The obtained ADCs can be used readily for functional evaluation including specificity, binding affinity, internalization, in vitro cell cytotoxicity and in vivo assays. The ideal model of ADCs construction boosts more stable new generation ADCs.</p>
-            <img class="pictrue" src="./assets/2_Functional_Conjugates.jpg" alt="">
+            <img class="pictrue" src="./assets/2_Functional_Conjugates_Apercu_Pro.jpg" alt="">
             <p>Our conjugation technology enables various functional ADCs developed for clinical and commercial use. Any kind of payloads, linkers, and antibodies correspond to your purposes. </p>
         </article>
     </section>
@@ -684,10 +688,10 @@
         <article class="content">
             <h1 class="title">For Cellular Immunotherapies</h1>
             
-            <img class="pictrue" src="./assets/3_Antibody-redirected_T-cell.jpg" alt="">
+            <img class="pictrue" src="./assets/3_Antibody-redirected_T-cell_Apercu_Pro.jpg" alt="">
             <p>To treat both liquid and solid tumors with potential “living drugs”, one of Orion’s strategies focus on antibody-redirected immune cell therapy. Antibody-redirected T cell comprised of cytotoxic T-cells and bridged antibodies. One end of the bridged molecules target the tumor cells, the other end engage the T-cells and trigger downstream cell killing pathways. T-cells can be readily used without genetic engineering, which makes all existing antibodies transformed into cell immunotherapies seamlessly.</p>
 
-            <img class="pictrue" src="./assets/4_Targeted_Universal_Immune_Cells.jpg" alt="">
+            <img class="pictrue" src="./assets/4_Targeted_Universal_Immune_Cells_Apercu_Pro.jpg" alt="">
             <p>We utilizes facile and innovative method to conjugate antibodies to universal T-cells. It provides better quality control via uniform cell manufacturing. This technology could also applied on alternative effector cells such as macrophages and NK cells for different targeted disease. Off-the-shelf cell immunotherapy can tackle the drug pricing challenge, make cell immunotherapy be truly affordable and accessible in the future. </p>
 
         </article>
